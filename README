@@ -9,7 +9,7 @@ Future plans for this rig include recreating the file as a python procedure, tha
 Version 2.0 with some "under the hood" improvements, increased speed and simplicity, file size is down to 70K. Main control object is: CTL. Use ropeEndA and ropeEndB to control the head and tail of the rope, and the 9 sub control objects to adjust your shape.
 Version 2.1 - Overhaul and a complete rebuilt using paintFX - now you can scale any part of the rope.
  
-Version 2.1.1 - revised some redundant code to reduce filesize by 90 K
+Version 2.1.1 - revised some redundant code to reduce filesize by 9 K
 
 Added index.css
 
