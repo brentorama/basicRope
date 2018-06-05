@@ -11,4 +11,5 @@ Version 2.1 - Overhaul and a complete rebuilt using paintFX - now you can scale 
  
 Version 2.1.1 - revised some redundant code to reduce filesize by 90 K
 
+Added index.css
 
