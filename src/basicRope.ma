@@ -139,17 +139,21 @@
 		setAttr -k off ".v";
 		setAttr ".uoc" 1;
 		setAttr ".oc" 4;
-	createNode transform -n "rope_1_CTL_GP" -p "CTL_GP";
+
+	for ($one in {1, 9}){
+		createNode transform -n ("rope_"+$one+"_CTL_GP") -p "CTL_GP";
 		setAttr -l on ".v";
-			for ($trs in {".t",".s"}){
+		for ($trs in {".t",".s"}){
 			for ($xyz in {"x","y","z"}){
 				setAttr -l on ($trs+$xyz);
 			}
 		}
-		setAttr ".rp" -type "double3" 9.8486673669627455e-016 0 -4 ;
-		setAttr ".rpt" -type "double3" -9.8486673669627455e-016 0 0 ;
-		setAttr ".sp" -type "double3" 9.8486673669627455e-016 0 -4 ;
+		setAttr ".rp" -type "double3" 9.9 0 -4 ;
+		setAttr ".rpt" -type "double3" -9.9 0 0 ;
+		setAttr ".sp" -type "double3" 9.9 0 -4 ;
 		setAttr ".smd" 7;
+	}
+
 	createNode transform -n "rope_1_CTL" -p "rope_1_CTL_GP";
 		setAttr -l on -k off ".v";
 		setAttr ".rp" -type "double3" 0 0 -4 ;
@@ -173,101 +177,24 @@
 		setAttr ".wut" 1;
 		setAttr ".rsrr" -type "double3" -129.94848787793524 -2.3713809748462649 176.83744973068613 ;
 		setAttr -k on ".w0";
-	createNode transform -n "loc2" -p "CTL_GP";
+	
+	for ($i=2; $i<9; $i++){
+        string $CTL = (("rope_")+$i+("_CTL"));
+        string $loc = ("loc"+$i)
+        createNode transform -n $loc -p "CTL_GP";
 		for ($trs in {".t",".r"}){
 			for ($xyz in {"x","y","z"}){
 				setAttr -l on ($trs+$xyz);
 			}
 		}
-	createNode locator -n "locShape2" -p "loc2";
-		setAttr -l on -k off -cb on ".v" no;
-	createNode transform -n "rope_2_CTL" -p "loc2";
-		setAttr ".r" -type "double3" 0 0 1 ;
-		setAttr ".s" -type "double3" 1.0000000000000853 1.0000000000000853 1.0000000000000853 ;
-	createNode nurbsCurve -n "rope_2_CTLShape" -p "rope_2_CTL";
-		setAttr -k off ".v";
-		setAttr ".tw" yes;
-	createNode transform -n "loc3" -p "CTL_GP";
-		for ($trs in {".t",".r"}){
-			for ($xyz in {"x","y","z"}){
-				setAttr -l on ($trs+$xyz);
-			}
-		}
-	createNode locator -n "locShape3" -p "loc3";
-		setAttr -l on -k off -cb on ".v" no;
-	createNode transform -n "rope_3_CTL" -p "loc3";
-	createNode nurbsCurve -n "rope_3_CTLShape" -p "rope_3_CTL";
-		setAttr -k off ".v";
-		setAttr ".tw" yes;
-	createNode transform -n "loc4" -p "CTL_GP";
-		for ($trs in {".t",".r"}){
-			for ($xyz in {"x","y","z"}){
-				setAttr -l on ($trs+$xyz);
-			}
-		}
-	createNode locator -n "locShape4" -p "loc4";
-		setAttr -l on -k off -cb on ".v" no;
-	createNode transform -n "rope_4_CTL" -p "loc4";
-	createNode nurbsCurve -n "rope_4_CTLShape" -p "rope_4_CTL";
-		setAttr -k off ".v";
-		setAttr ".tw" yes;
-	createNode transform -n "loc5" -p "CTL_GP";
-		for ($trs in {".t",".r"}){
-			for ($xyz in {"x","y","z"}){
-				setAttr -l on ($trs+$xyz);
-			}
-		}
-	createNode locator -n "locShape5" -p "loc5";
-		setAttr -l on -k off -cb on ".v" no;
-	createNode transform -n "rope_5_CTL" -p "loc5";
-	createNode nurbsCurve -n "rope_5_CTLShape" -p "rope_5_CTL";
-		setAttr -k off ".v";
-		setAttr ".tw" yes;
-	createNode transform -n "loc6" -p "CTL_GP";
-		for ($trs in {".t",".r"}){
-			for ($xyz in {"x","y","z"}){
-				setAttr -l on ($trs+$xyz);
-			}
-		}
-	createNode locator -n "locShape6" -p "loc6";
-		setAttr -l on -k off -cb on ".v" no;
-	createNode transform -n "rope_6_CTL" -p "loc6";
-	createNode nurbsCurve -n "rope_6_CTLShape" -p "rope_6_CTL";
-		setAttr -k off ".v";
-		setAttr ".tw" yes;
-	createNode transform -n "loc7" -p "CTL_GP";
-		for ($trs in {".t",".r"}){
-			for ($xyz in {"x","y","z"}){
-				setAttr -l on ($trs+$xyz);
-			}
-		}
-	createNode locator -n "locShape7" -p "loc7";
-		setAttr -l on -k off -cb on ".v" no;
-	createNode transform -n "rope_7_CTL" -p "loc7";
-	createNode nurbsCurve -n "rope_7_CTLShape" -p "rope_7_CTL";
-		setAttr -k off ".v";
-		setAttr ".tw" yes;
-	createNode transform -n "loc8" -p "CTL_GP";
-		for ($trs in {".t",".r"}){
-			for ($xyz in {"x","y","z"}){
-				setAttr -l on ($trs+$xyz);
-			}
-		}
-	createNode locator -n "locShape8" -p "loc8";
-		setAttr -l on -k off -cb on ".v" no;
-	createNode transform -n "rope_8_CTL" -p "loc8";
-	createNode nurbsCurve -n "rope_8_CTLShape" -p "rope_8_CTL";
-		setAttr -k off ".v";
-		setAttr ".tw" yes;
-	createNode transform -n "rope_9_CTL_GP" -p "CTL_GP";
-		for ($trs in {".t",".r", ".s"}){
-			for ($xyz in {"x","y","z"}){
-				setAttr -l on ($trs+$xyz);
-			}
-		}
-		setAttr ".rp" -type "double3" 0 -5.5511151231257827e-017 4 ;
-		setAttr ".sp" -type "double3" 0 -5.5511151231257827e-017 4 ;
-		setAttr ".smd" 7;
+        createNode locator -n ("locShape"+$i) -p $loc;
+            setAttr -l on -k off -cb on ".v" no;
+        createNode transform -n $CTL -p $loc;
+        createNode nurbsCurve -n ($CTL+"Shape") -p $CTL;
+            setAttr -k off ".v";
+            setAttr ".tw" yes;
+    }	
+
 	createNode transform -n "rope_9_CTL" -p "rope_9_CTL_GP";
 		setAttr -l on -k off ".v";
 		setAttr ".rp" -type "double3" 0 0 4 ;
