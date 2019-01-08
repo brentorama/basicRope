@@ -1,7 +1,4 @@
-Brent Forrest 2018
-
-Basic Rope
-
+![ROPE](https://raw.githubusercontent.com/brentorama/basicRope/master/img/ROpeLogo.png)
 The single greatest rope rig ever made for Maya
 
 This is a simple rope rig for animation. Any length, any thickness and any twist all consolidated into an easy-to use rig. Import multiple versions and lock the heads and tails together for extended rope. Good for quick and easy modelling of pipes, wires, ropes and ropey effects - It can also be used to rig characters - import and use as rubber hose type arms and legs.
@@ -11,8 +8,3 @@ Version 2.1 - Overhaul and a complete rebuilt using paintFX - now you can scale 
  
 Version 2.1.1 - revised some redundant code to reduce filesize by 9 K
 
-Added index.css
-
-Making an intentional conflict
-
-Working with git pull
