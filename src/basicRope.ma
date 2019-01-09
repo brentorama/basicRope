@@ -3,7 +3,6 @@
 	//Last modified: Fri, Feb 23, 2018 03:57:23 PM
 	//Codeset: 1252
 	requires maya "2016";
-	requires "stereoCamera" "10.0";
 	currentUnit -l centimeter -a degree -t film;
 	fileInfo "application" "maya";
 	fileInfo "product" "Maya 2016";
@@ -986,6 +985,7 @@
 		setAttr -k on ".ani";
 	select -ne :ikSystem;
 		setAttr -s 4 ".sol";
+	/*
 	connectAttr "makeNurbCircle1.oc" "CTLShape.cr";
 	connectAttr "baseClstrB.t" "rope_1_CTL_GP.t";
 	connectAttr "CTL.s" "rope_1_CTL_GP.s";
@@ -1499,4 +1499,5 @@
 	connectAttr "addDoubleLinear1.msg" ":defaultRenderUtilityList1.u" -na;
 	connectAttr "reverse3.msg" ":defaultRenderUtilityList1.u" -na;
 	connectAttr "checker1.msg" ":defaultTextureList1.tx" -na;
+	*/
 	// End of basicRope.ma
